@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Calculadora huella de carbono. CO2</title>
+ <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+ window.FontAwesomeKitConfig = {"asyncLoading":{"enabled":true},"autoA11y":{"enabled":true},"baseUrl":"https://kit-free.fontawesome.com","license":"free","method":"css","minify":{"enabled":true},"v4shim":{"enabled":true},"version":"latest"};
+!function(){!function(){if(!(void 0===window.Element||"classList"in document.documentElement)){var e,t,n,i=Array.prototype,o=i.push,a=i.splice,s=i.join;r.prototype={add:function(e){this.contains(e)||(o.call(this,e),this.el.className=this.toString())},contains:function(e){return-1!=this.el.className.indexOf(e)},item:function(e){return this[e]||null},remove:function(e){if(this.contains(e)){for(var t=0;t<this.length&&this[t]!=e;t++);a.call(this,t,1),this.el.className=this.toString()}},toString:function(){return s.call(this," ")},toggle:function(e){return this.contains(e)?this.remove(e):this.add(e),this.contains(e)}},window.DOMTokenList=r,e=Element.prototype,t="classList",n=function(){return new r(this)},Object.defineProperty?Object.defineProperty(e,t,{get:n}):e.__defineGetter__(t,n)}function r(e){for(var t=(this.el=e).className.replace(/^\s+|\s+$/g,"").split(/\s+/),n=0;n<t.length;n++)o.call(this,t[n])}}();function f(e){var t,n,i,o;prefixesArray=e||["fa"],prefixesSelectorString="."+Array.prototype.join.call(e,",."),t=document.querySelectorAll(prefixesSelectorString),Array.prototype.forEach.call(t,function(e){n=e.getAttribute("title"),e.setAttribute("aria-hidden","true"),i=!e.nextElementSibling||!e.nextElementSibling.classList.contains("sr-only"),n&&i&&((o=document.createElement("span")).innerHTML=n,o.classList.add("sr-only"),e.parentNode.insertBefore(o,e.nextSibling))})}var e,t,u=function(e){var t=document.createElement("link");t.href=e,t.media="all",t.rel="stylesheet",document.getElementsByTagName("head")[0].appendChild(t)},m=function(e){!function(e,t,n){var i,o=window.document,a=o.createElement("link");if(t)i=t;else{var s=(o.body||o.getElementsByTagName("head")[0]).childNodes;i=s[s.length-1]}var r=o.styleSheets;a.rel="stylesheet",a.href=e,a.media="only x",function e(t){if(o.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,t?i:i.nextSibling)});var l=function(e){for(var t=a.href,n=r.length;n--;)if(r[n].href===t)return e();setTimeout(function(){l(e)})};function c(){a.addEventListener&&a.removeEventListener("load",c),a.media=n||"all"}a.addEventListener&&a.addEventListener("load",c),(a.onloadcssdefined=l)(c)}(e)},n=function(e,t){var n=t&&void 0!==t.autoFetchSvg?t.autoFetchSvg:void 0,i=t&&void 0!==t.async?t.async:void 0,o=t&&void 0!==t.autoA11y?t.autoA11y:void 0,a=document.createElement("script"),s=document.scripts[0];a.src=e,void 0!==o&&a.setAttribute("data-auto-a11y",o?"true":"false"),n&&(a.setAttributeNode(document.createAttribute("data-auto-fetch-svg")),a.setAttribute("data-fetch-svg-from",t.fetchSvgFrom)),i&&a.setAttributeNode(document.createAttribute("defer")),s.parentNode.appendChild(a)};function h(e,t){var n=t&&t.shim?e.license+"-v4-shims":e.license,i=t&&t.minify?".min":"";return e.baseUrl+"/releases/"+("latest"===e.version?"latest":"v".concat(e.version))+"/"+e.method+"/"+n+i+"."+e.method}try{if(window.FontAwesomeKitConfig){var i=window.FontAwesomeKitConfig;"js"===i.method&&(t={async:(e=i).asyncLoading.enabled,autoA11y:e.autoA11y.enabled},"pro"===e.license&&(t.autoFetchSvg=!0,t.fetchSvgFrom=e.baseUrl+"/releases/"+("latest"===e.version?"latest":"v".concat(e.version))+"/svgs"),e.v4shim.enabled&&n(h(e,{shim:!0,minify:e.minify.enabled})),n(h(e,{minify:e.minify.enabled}),t)),"css"===i.method&&function(e){var t,n,i,o,a,s,r,l,c=f.bind(f,["fa","fab","fas","far","fal"]);e.autoA11y.enabled&&(n=c,o=[],a=document,s=a.documentElement.doScroll,r="DOMContentLoaded",(l=(s?/^loaded|^c/:/^loaded|^i|^c/).test(a.readyState))||a.addEventListener(r,i=function(){for(a.removeEventListener(r,i),l=1;i=o.shift();)i()}),l?setTimeout(n,0):o.push(n),t=c,"undefined"!=typeof MutationObserver&&new MutationObserver(t).observe(document,{childList:!0,subtree:!0})),e.v4shim.enabled&&(e.asyncLoading.enabled?m(h(e,{shim:!0,minify:e.minify.enabled})):u(h(e,{shim:!0,minify:e.minify.enabled})));var d=h(e,{minify:e.minify.enabled});e.asyncLoading.enabled?m(d):u(d)}(i)}}catch(e){}}();
+ </script>
+ <script>
+$(document).ready(function(){
+  $('[data-toggle="tooltip"]').tooltip();    
+});
+</script>
+<script>
+function mostrar(idBtn) {
+  var numeros = document.getElementById('numeros');	
+  var card1 = document.getElementById('card1');
+  var card2 = document.getElementById('card2');
+  var card3 = document.getElementById('card3');
+  var card4 = document.getElementById('card4');
+  var card5 = document.getElementById('card5');
+  var card6 = document.getElementById('card6');
+  var card7 = document.getElementById('card7');
+  var card8 = document.getElementById('card8');
+  var card9 = document.getElementById('card9');
+  var card10 = document.getElementById('card10');
+  var card11 = document.getElementById('card11');
+  var card12 = document.getElementById('card12');  
+  var resumen = document.getElementById('resumen');
+  var bailar = document.getElementById('bailar');
+    
+ switch(idBtn) {
+  case 0:
+          numeros.style.display = 'block';
+          card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';
+		  bailar.style.display ='none';
+break;
+ case 1:
+          numeros.style.display = 'none';
+          card1.style.display = 'block';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';
+		  bailar.style.display ='none';
+break;
+
+ case 2:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'block';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';	
+		  bailar.style.display ='none';
+break;
+
+ case 3:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'block';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';
+		  bailar.style.display ='none';
+break;
+
+ case 4:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'block';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';
+		  bailar.style.display ='none';		  		  
+    break;
+
+ case 5:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'block';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+
+ case 6:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'block';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+
+ case 7:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'block';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+
+ case 8:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'block';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+
+ case 9:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'block';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+
+ case 10:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'block';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+
+ case 11:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'block';
+          card12.style.display = 'none';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+
+ case 12:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'block';
+          resumen.style.display = 'none';		  
+		  bailar.style.display ='none';
+    break;
+ 
+ case 13:
+          numeros.style.display = 'none';
+		  card1.style.display = 'none';
+          card2.style.display = 'none';
+          card3.style.display = 'none';
+          card4.style.display = 'none';
+          card5.style.display = 'none';
+          card6.style.display = 'none';
+          card7.style.display = 'none';
+          card8.style.display = 'none';
+          card9.style.display = 'none';
+          card10.style.display = 'none';
+          card11.style.display = 'none';
+          card12.style.display = 'none';
+          resumen.style.display = 'block';		  
+		  bailar.style.display ='none';
+    break;
+	
+default:
+          alert("No existe el botón.")
+        }
+
+   }
+</script>
+<script>
+function numF(numero){ 
+    var decimales = 1;
+	var cdec = ',';
+	var cmil = '.';
+	numero=parseFloat(numero);
+    if(isNaN(numero)){
+        return "";
+    }
+    if(decimales!==undefined){         // Redondeo
+        numero=numero.toFixed(decimales);
+    }
+    numero=numero.toString().replace(".", cdec!==undefined ? cdec : ",");     // decimal
+    if(cmil){
+        var miles=new RegExp("(-?[0-9]+)([0-9]{3})");
+        while(miles.test(numero)) {
+            numero=numero.replace(miles, "$1" + cmil + "$2");
+        }
+    }
+    return numero;
+}
+
+function calcular(){
+var factor1 = document.getElementById("factor1").value;
+var v1 = document.getElementById("v1").value;
+var cada1 = document.getElementById("cada1").value;
+var km1 = document.getElementById("km1").value;
+var Tot1 = (parseInt(v1) * parseInt(cada1)) * (parseInt(km1) * factor1);
+
+if (Tot1 > 0) { 
+	document.getElementById('co21').innerHTML = numF(Tot1);
+	document.getElementById('r1').value = numF(Tot1);	
+} else  {
+	Tot1 = 0;
+	document.getElementById('co21').innerHTML = 0;
+	document.getElementById('r1').innerHTML = 0;	
+}	
+
+var factor2 = document.getElementById("factor2").value;
+var v2 =  document.getElementById("v2").value;
+var cada2 = document.getElementById("cada2").value;
+var km2 = document.getElementById("km2").value;
+var Tot2 = (parseInt(v2) * parseInt(cada2)) * (parseInt(km2) * factor2);
+if (Tot2 > 0) { 
+	document.getElementById('co22').innerHTML = numF(Tot2);
+	document.getElementById('r2').value = numF(Tot2);	
+} else {
+	Tot2 = 0;
+	document.getElementById('co22').innerHTML = 0;
+	document.getElementById('r2').innerHTML = 0;	
+}	
+
+var factor3 = document.getElementById("factor3").value;
+var v3 = document.getElementById("v3").value;
+var cada3 = document.getElementById("cada3").value;
+var km3 = document.getElementById("km3").value;
+var Tot3 = (parseInt(v3) * parseInt(cada3)) * (parseInt(km3) * factor3);
+if (Tot3 > 0) { 
+	document.getElementById('co23').innerHTML = numF(Tot3);
+	document.getElementById('r3').value = numF(Tot3);	
+} else  {
+	Tot3 = 0;
+	document.getElementById('co23').innerHTML = 0;
+	document.getElementById('r3').innerHTML = 0;	
+}
+
+var factor4 = document.getElementById("factor4").value;
+var v4 = document.getElementById("v4").value;
+var cada4 = document.getElementById("cada4").value;
+var km4 = document.getElementById("km4").value;
+var Tot4 = (parseInt(v4) * parseInt(cada4)) * (parseInt(km4) * factor4);
+if (Tot4 > 0) { 
+	document.getElementById('co24').innerHTML = numF(Tot4);
+	document.getElementById('r4').value = numF(Tot4);	
+} else {
+	Tot4 = 0;
+	document.getElementById('co24').innerHTML = 0;
+	document.getElementById('r4').innerHTML = 0;		
+}	
+
+var factor5 = document.getElementById("factor5").value;
+var v5 = document.getElementById("v5").value;
+var cada5 = document.getElementById("cada5").value;
+var km5 = document.getElementById("km5").value;
+var Tot5 = (parseInt(v5) * parseInt(cada5)) * (parseInt(km5) * factor5);
+if (Tot5 > 0) { 
+	document.getElementById('co25').innerHTML = numF(Tot5);
+	document.getElementById('r5').value = numF(Tot5);	
+} else {
+	Tot5 = 0;
+	document.getElementById('co25').innerHTML = 0;
+	document.getElementById('r5').innerHTML = 0;	
+}
+
+
+var factor6 = document.getElementById("factor6").value;
+var v6 = document.getElementById("v6").value;
+var cada6 = document.getElementById("cada6").value;
+var km6 = document.getElementById("km6").value;
+var Tot6 = (parseInt(v6) * parseInt(cada6)) * (parseInt(km6) * factor6);
+if (Tot6 > 0) { 
+	document.getElementById('co26').innerHTML = numF(Tot6);
+	document.getElementById('r6').value = numF(Tot6);		
+} else {
+	Tot6 = 0;
+	document.getElementById('co26').innerHTML = 0;
+	document.getElementById('r6').innerHTML = 0;	
+}
+
+
+var factor7 = document.getElementById("factor7").value;
+var v7 = document.getElementById("v7").value;
+var cada7 = document.getElementById("cada7").value;
+var km7 = document.getElementById("km7").value;
+var Tot7 = (parseInt(v7) * parseInt(cada7)) * (parseInt(km7) * factor7);
+if (Tot7 > 0) { 
+	document.getElementById('co27').innerHTML = numF(Tot7);
+	document.getElementById('r7').value = numF(Tot7);		
+} else {
+	Tot7 = 0;
+	document.getElementById('co27').innerHTML = 0;
+	document.getElementById('r7').innerHTML = 0;		
+}
+
+
+var factor8 = document.getElementById("factor8").value;
+var v8 = document.getElementById("v8").value;
+var cada8 = document.getElementById("cada8").value;
+var km8 = document.getElementById("km8").value;
+var Tot8 = (parseInt(v8) * parseInt(cada8)) * (parseInt(km8) * factor8);
+if (Tot8 > 0) { 
+	document.getElementById('co28').innerHTML = numF(Tot8);
+	document.getElementById('r8').value = numF(Tot8);		
+} else {
+	Tot8 = 0;
+	document.getElementById('co28').innerHTML = 0;
+	document.getElementById('r8').innerHTML = 0;		
+}
+
+var factor9 = document.getElementById("factor9").value;
+var v9 = document.getElementById("v9").value;
+var cada9 = document.getElementById("cada9").value;
+var km9 = document.getElementById("km9").value;
+var Tot9 = (parseInt(v9) * parseInt(cada9)) * (parseInt(km9) * factor9);
+if (Tot9 > 0) { 
+	document.getElementById('co29').innerHTML = numF(Tot9);
+	document.getElementById('r9').value = numF(Tot9);		
+} else {
+	Tot9 = 0;
+	document.getElementById('co29').innerHTML = 0;
+	document.getElementById('r9').innerHTML = 0;	
+}
+
+var factor10 = document.getElementById("factor10").value;
+var v10 = document.getElementById("v10").value;
+var cada10 = document.getElementById("cada10").value;
+var km10 = document.getElementById("km10").value;
+var Tot10 = (parseInt(v10) * parseInt(cada10)) * (parseInt(km10) * factor10);
+if (Tot10 > 0) { 
+	document.getElementById('co210').innerHTML = numF(Tot10);
+	document.getElementById('r10').value = numF(Tot10);		
+} else {
+	Tot10 = 0;
+	document.getElementById('co210').innerHTML = 0;
+	document.getElementById('r10').innerHTML = 0;
+}
+
+var factor11 = document.getElementById("factor11").value;
+var v11 = document.getElementById("v11").value;
+var cada11 = document.getElementById("cada11").value;
+var km11 = document.getElementById("km11").value;
+var Tot11 = (parseInt(v11) * parseInt(cada11)) * (parseInt(km11) * factor11);
+if (Tot11 > 0) { 
+	document.getElementById('co211').innerHTML = numF(Tot11);
+	document.getElementById('r11').value = numF(Tot11);	
+} else {
+	Tot11 = 0;
+	document.getElementById('co211').innerHTML = 0;
+	document.getElementById('r11').innerHTML = 0;
+}
+
+
+var factor12 = document.getElementById("factor12").value;
+var v12 = document.getElementById("v12").value;
+var cada12 = document.getElementById("cada12").value;
+var km12 = document.getElementById("km12").value;
+var Tot12 = (parseInt(v12) * parseInt(cada12)) * (parseInt(km12) * factor12);
+if (Tot12 > 0) { 
+	document.getElementById('co212').innerHTML = numF(Tot12);
+	document.getElementById('r12').value = numF(Tot12);	
+} else {
+	Tot12 = 0;
+	document.getElementById('co212').innerHTML = 0;
+	document.getElementById('r12').innerHTML = 0;
+}
+
+var TotalTonCO2 = 0;
+var Totaltodos = Tot1 + Tot2 + Tot3 + Tot4 + Tot5 + Tot6 + Tot7 + Tot8 + Tot9 + Tot10 + Tot11 + Tot12;
+TotalTonCO2 = Totaltodos / 1000;
+
+	document.getElementById('TotalCO2').innerHTML = numF(Totaltodos);
+	
+	if (TotalTonCO2 > 0.099) {
+
+		document.getElementById('TonCO2').innerHTML = '<i>(' + (numF(TotalTonCO2)) + ' toneladas)<\/i>';	
+	} else { 
+		document.getElementById('TonCO2').innerHTML = '';
+	}
+mostrar(0);
+}
+
+function borrar(){
+for (var i=0;i<calculadora.length;i++){
+document.getElementById("km  + i").value = '';
+document.getElementById("v + i").value = '';
+}
+}
+function bailar(){
+var audio = new Audio('devorme-otra-vez.mp3');
+audio.play();
+document.getElementById('bailar').style.display ='block';
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background: url(01.jpg) no-repeat center center fixed;
+    background-size: 100% 100%;
+}
+body,td,th {
+	font-size: 2em;
+}
+.card{
+margin-top: auto;
+margin-bottom: auto;
+padding-left:10px;
+padding-right:10px;
+display:none;
+}
+input:focus{
+outline: 0 0 0 0  !important;
+box-shadow: 0 0 0 0 !important;
+}
+.input-group-prepend span{
+width: 50px;
+color: white;
+border:0 !important;
+}
+.rojo{
+font-weight:bold;
+color:red;
+}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="col-md-4"></div>
+<div class="col-md-4" >
+<form name="calculadora" id="calculadora">
+    <div class="panel panel-primary">
+      <div class="panel-heading"><!-- <img src="" width="40" height="40"> --> Huella de carbono</div>
+      <div class="panel-body">
+        <div class="input-group"> <span class="input-group-addon" id="opr">
+          <div><h3><span id="TotalCO2" class="rojo"></span><strong> kilos </h3><br><span id="TonCO2"></span> de CO<sub>2</sub> <span style="color:blue;">al a&ntilde;o</span></strong></div>
+          </span>
+        </div>
+        <br>
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn1" data-toggle="tooltip" title="Caminando" onclick="mostrar(1)">
+              <h4><i class="fas fa-walking"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn2" data-toggle="tooltip" title="En bicicleta" onclick="mostrar(2)">
+              <h4><i class="fas fa-bicycle"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn3" data-toggle="tooltip" title="En tren o metro" onclick="mostrar(3)">
+              <h4><i class="fas fa-subway"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn4" data-toggle="tooltip" title="En autobús" onclick="mostrar(4)">
+              <h4><i class="fas fa-bus-alt"></i></h4>
+            </button>
+          </div>
+        </div>
+
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn5" data-toggle="tooltip" title="En moto" onclick="mostrar(5)">
+              <h4><i class="fas fa-motorcycle"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn6" data-toggle="tooltip" title="En coche pequeño o diésel" onclick="mostrar(6)">
+              <h4><i class="fas fa-car-side"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn7" data-toggle="tooltip" title="En coche mediano o gasolina" onclick="mostrar(7)">
+              <h4><i class="fas fa-car"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn8"  data-toggle="tooltip" title="En vehículo grande" onclick="mostrar(8)">
+              <h4><i class="fas fa-shuttle-van"></i></h4>
+            </button>
+          </div>
+        </div>
+
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn9"  data-toggle="tooltip" title="En avión" onclick="mostrar(9)">
+              <h4><i class="fas fa-plane"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn10"  data-toggle="tooltip" title="Calefacción gasoil" onclick="mostrar(10)">
+              <h4><i class="fas fa-hot-tub"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn11" data-toggle="tooltip" title="Calefacción gas" onclick="mostrar(11)">
+              <h4><i class="fas fa-fire-alt"></i></h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="btn12" data-toggle="tooltip" title="Electricidad" onclick="mostrar(12)">
+              <h4><i class="fas fa-plug"></i></h4>
+            </button>
+          </div>
+</div> 
+<div id="numeros">
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="7" title="7">
+              <h4>7</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="8" title="8">
+              <h4>8</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="9" title="9">
+              <h4>9</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" id="*" title="*">
+              <h4>*</h4>
+            </button>
+          </div>
+          </div>
+          
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="4" title="4">
+              <h4>4</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="5" title="5">
+              <h4>5</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="6" title="6">
+              <h4>6</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" id="/" title="/">
+              <h4>/</h4>
+            </button>
+          </div>
+          </div>
+
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="1" title="1">
+              <h4>1</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="2" title="2">
+              <h4>2</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="3" title="3">
+              <h4>3</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" id="-" title="-">
+              <h4>-</h4>
+            </button>
+          </div>
+          </div>
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="0" title="0">
+              <h4>0</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-warning" id="." title="." onClick="bailar()">
+              <h4>USB</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" id="=" title="=">
+              <h4>=</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary" id="+" title="+">
+              <h4>+</h4>
+            </button>
+          </div>
+          </div>
+</div> <!-- numeros -->
+</div> <!-- /row -->
+    
+    <!-- A pie -->
+    <div class="card" id="card1">
+      <div class="card-body">
+      <h3 class="card-title">¿Cuánto caminas?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-walking"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="A pie" id="factor1" value="0" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km1" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v1" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada1" id="cada1" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co21">0</strong></h3></div>
+        </div>
+        </div>
+  <!-- /a pie -->
+  
+    <!-- en bici -->
+    <div class="card" id="card2">
+      <div class="card-body">
+      <h3 class="card-title">¿Cuánto andas en bicicleta?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-bicycle"></i>  factor</h4></div>
+          <input type="text" class="form-control" placeholder="En bici" id="factor2" value="0" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km2" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v2" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada2" id="cada2" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co22">0</strong></h3></div>
+        </div>
+        </div>
+  <!-- /en bici -->	  
+   
+   
+       <!-- en tren -->
+    <div class="card" id="card3">
+      <div class="card-body">
+      <h3 class="card-title">¿Viajas en tren o metro?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-subway"></i>  factor</h4></div>
+          <input type="text" class="form-control" placeholder="En tren" id="factor3" value="0.025" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km3" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v3" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada3" id="cada3" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co23">0</strong></h3></div>
+        </div>
+        </div>
+  <!-- /en tren -->
+   
+       <!-- en autobús -->
+    <div class="card" id="card4">
+      <div class="card-body">
+      <h3 class="card-title">¿Viajas en autobús?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-bus-alt"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="En autobús" id="factor4" value="0.062" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km4" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v4" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada4" id="cada4" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co24">0</strong></h3></div>
+        </div>
+        </div>
+  <!-- /en autobús -->
+
+    <!-- en moto -->
+    <div class="card" id="card5">
+      <div class="card-body">
+      <h3 class="card-title">¿Viajas en moto?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-motorcycle"></i>  factor</h4></div>
+          <input type="text" class="form-control" placeholder="En moto" id="factor5" value="0.120" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km5" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v5" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada5" id="cada5" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co25">0</strong></h3></div>
+        </div>
+        </div>
+  <!-- /en moto -->
+
+     <!-- en coche pequeño -->
+    <div class="card" id="card6">
+      <div class="card-body">
+      <h3 class="card-title">¿Tienes un coche pequeño o diésel?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-car-side"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="En coche pequeño" id="factor6" value="0.120" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km6" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v6" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada6" id="cada6" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co26">0</strong></h3></div>
+        </div>
+        </div>
+  <!-- /en coche pequeño -->
+
+<!-- en coche mediano -->
+     <div class="card" id="card7">
+      <div class="card-body">
+      <h3 class="card-title">¿Usas coche mediano (o gasolina)?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-car"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="En coche mediano" id="factor7" value="0.190" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km7" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v7" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada7" id="cada7" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co27">0</strong></h3></div>
+        </div>
+        </div>
+  <!-- /en coche mediano -->        
+ 
+     <!-- en coche grande -->
+    <div class="card" id="card8">
+      <div class="card-body">
+      <h3 class="card-title">¿Tienes un vehículo grande?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-shuttle-van"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="En coche grande" id="factor8" value="0.220" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km8" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v8" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada8" id="cada8" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co28">0</strong></h3></div>
+        </div>
+        </div>
+ <!-- /coche grande -->
+
+    <!-- en avión -->
+    <div class="card" id="card9">
+      <div class="card-body">
+      <h3 class="card-title">¿Viajas en avión?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-plane"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="En avión" id="factor9" value="0.450" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-road"></i> kilómetros</h4></div>
+          <input type="text" class="form-control" id="km9" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v9" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada9" id="cada9" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co29">0</strong></h3></div>
+        </div>
+        </div>
+ <!-- /avión -->
+
+<!-- gasoil -->
+    <div class="card" id="card10">
+      <div class="card-body">
+      <h3 class="card-title">¿Cuál es tu consumo en calefacción de gasoil?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-hot-tub"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="gasoil" id="factor10" value="2.91" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-gas-pump"></i> litros gasoil</h4></div>
+          <input type="text" class="form-control" id="km10" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v10" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada10" id="cada10" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co210">0</strong></h3></div>
+        </div>
+        </div>
+ <!-- /gasoil -->
+
+<!-- gas -->
+    <div class="card" id="card11">
+      <div class="card-body">
+      <h3 class="card-title">¿Cuál es tu consumo en calefacción de gas?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-fire-alt"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="gasoil" id="factor11" value="2.04" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-ruler"></i> metros cúbicos</h4></div>
+          <input type="text" class="form-control" id="km11" placeholder="0" value="0" onfocus="this.value=''">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v11" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada11" id="cada11" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co211">0</strong></h3></div>
+        </div>
+        </div>
+ <!-- /gas -->
+
+<!-- electricidad -->
+    <div class="card" id="card12">
+      <div class="card-body">
+      <h3 class="card-title">¿Cuál es tu consumo de electricidad?</h3>
+        <div class="input-group-lg form-group ">
+          <div class="input-group-prepend"><h4><i class="fas fa-plug"></i> factor</h4></div>
+          <input type="text" class="form-control" placeholder="electricidad" id="factor12" value="0.37" disabled>
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-battery-three-quarters"></i> kilovatios</h4></div>
+          <input type="text" class="form-control" id="km12" placeholder="0" value="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="fas fa-redo-alt"></i> veces</h4></div>
+          <input type="number" class="form-control" id="v12" placeholder="Número de veces" value="1" min="0">
+        </div>
+        <div class="input-group-lg form-group">
+          <div class="input-group-prepend"> <h4><i class="far fa-calendar-alt"></i> período</h4></div>
+          <select name="cada12" id="cada12" class="form-control">
+            <option value="365">al dia</option>
+            <option value="52">a la semana</option>
+            <option value="12">al mes</option>
+            <option value="1">al a&ntilde;o</option>
+          </select>
+        </div>
+		<div align="right"> <h3><strong id="co212">0</strong></h3></div>
+        </div>
+        </div>
+ <!-- /electricidad -->
+
+
+<!-- resumen -->
+    <div class="card" id="resumen">
+      <div class="card-body">
+      <h4 class="card-title text-center">Desglose de tu huella de carbono (kilos CO<sub>2</sub> al año)</h4>
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-walking"></i> Caminando</h4></div>
+         <input type="text" class="form-control" id="r1" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-bicycle"></i> En bicicleta</h4></div>
+         <input type="text" class="form-control" id="r2" value="0" disabled>
+        </div> 
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-subway"></i> En tren o metro</h4></div>
+         <input type="text" class="form-control" id="r3" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-bus-alt"></i> En autobús</h4></div>
+         <input type="text" class="form-control" id="r4" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-motorcycle"></i> En moto</h4></div>
+         <input type="text" class="form-control" id="r5" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-car-side"></i> En coche pequeño o diésel</h4></div>
+         <input type="text" class="form-control" id="r6" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-car"></i> En coche mediano o gasolina</h4></div>
+         <input type="text" class="form-control" id="r7" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-shuttle-van"></i> En coche grande</h4></div>
+         <input type="text" class="form-control" id="r8" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-plane"></i> En avión</h4></div>
+         <input type="text" class="form-control" id="r9" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-hot-tub"></i> En gasoil calefacción</h4></div>
+         <input type="text" class="form-control" id="r10" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-fire-alt"></i> En gas calefacción</h4></div>
+         <input type="text" class="form-control" id="r11" value="0" disabled>
+        </div>		
+      <div class="input-group-lg form-group">
+		<div class="input-group-prepend"><h4><i class="fas fa-plug"></i> En electricidad</h4></div>
+         <input type="text" class="form-control" id="r12" value="0" disabled>
+        </div>		
+
+      </div>
+    </div>
+ <!-- /resumen -->
+
+
+<!-- electricidad -->
+    <div class="card" id="bailar">
+      <div class="card-body">
+      <div class="text-center"><!-- <img src="" class="img-responsive center-block">--></div>
+        </div>
+        </div>
+ <!-- /electricidad -->
+
+    <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger" id="btn_ig" onClick="calcular()">
+              <h4>Calcular</h4>
+            </button>
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-success" id="btn_ig" onClick="mostrar(13)">
+              <h4>Desglose</h4>
+            </button>
+          </div>          
+          <div class="btn-group" role="group">
+            <button type="submit" class="btn btn-primary" id="btn_c" onClick="borrar()">
+              <h4>Reiniciar</h4>
+            </button>
+         </div>
+        </div>
+      </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
